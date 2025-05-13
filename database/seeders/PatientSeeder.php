@@ -2,10 +2,7 @@
 
 namespace Database\Seeders;
 
-<<<<<<< HEAD
-=======
 use App\MediumAcquisitionEnum;
->>>>>>> 234361882c0f55fa7895455d5e20ff3a257f89af
 use App\Models\Patient;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
