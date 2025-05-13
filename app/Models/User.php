@@ -53,4 +53,9 @@ class User extends Authenticatable
             'id_type' => IdTypeEnum::class,
         ];
     }
+
+    public function patient()
+    {
+        return $this->hasOne(Patient::class);
+    }
 }
