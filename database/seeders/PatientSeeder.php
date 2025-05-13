@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\MediumAcquisitionEnum;
 use App\Models\Patient;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -15,12 +16,11 @@ class PatientSeeder extends Seeder
     public function run(): void
     {
         $users = User::all();
-        $mediums = ['website', 'referral', 'advertisement', 'social_media'];
 
         foreach ($users as $user) {
             Patient::create([
                 'user_id' => $user->id,
-                'medium_acquisition' => $mediums[array_rand($mediums)],
+                'medium_acquisition' => fake()->randomElement(MediumAcquisitionEnum::cases())->value,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

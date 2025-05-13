@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\IdTypeEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -21,6 +23,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'id_type',
+        'id_no',
+        'gender',
+        'dob',
+        'address',
     ];
 
     /**
@@ -43,6 +50,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'id_type' => IdTypeEnum::class,
         ];
     }
 }
